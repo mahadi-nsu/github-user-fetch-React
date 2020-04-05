@@ -16,10 +16,10 @@ export default class Form extends Component {
         event.preventDefault();
         // console.log(this.state.userName);
         const response = await axios.get(this.url + this.state.userName);
-        // console.log(response);
-        // console.log("Mahadi");
         this.props.onSubmit(response.data);
-
+        this.setState({
+            userName: ''
+        })
     }
     render() {
         return (
